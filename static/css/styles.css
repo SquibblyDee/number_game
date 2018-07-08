@@ -1,0 +1,54 @@
+*{
+    /* outline: 1px solid red; */
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+    text-align: center;
+    margin-top: 5%;
+}
+
+form{
+    width: 30%;
+    margin-left: 35%;
+    text-align: center;
+}
+
+button{
+    box-shadow: 3px 3px black;
+}
+
+h2{
+    padding: 30% 0% 10% 0%;
+}
+
+.tooLow{
+    width: 50%;
+    height: 250px;
+    background-color: red;
+    outline: 3px solid black;
+    margin: 5% 10% 1% 25%;
+    color: white;
+    text-align: center;
+}
+
+.tooHigh{
+    width: 50%;
+    height: 250px;
+    background-color: red;
+    outline: 3px solid black;
+    margin: 5% 10% 1% 25%;
+    color: white;
+    text-align: center;
+}
+
+.perfect{
+    width: 50%;
+    height: 250px;
+    background-color: green;
+    outline: 3px solid black;
+    margin: 5% 10% 1% 25%;
+    color: white;
+    text-align: center;
+}

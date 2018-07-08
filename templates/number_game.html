@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>The Great Number Game</title>
+        <!-- linking a css style sheet -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+        <!-- Linking Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class='container'>
+            <h1>Welcome to the Great Number Game!</h1>
+            <h3>I am thinking of a number between 1 and 100</h3>
+            <h3>Take a guess!</h3>
+            {% if session['result'] == 'tooLow' %}
+            <div class='tooLow'>
+                <h2>Too low!</h2>
+            </div>
+            {% endif %}
+            {% if session['result'] == 'tooHigh' %}
+            <div class='tooHigh'>
+                <h2>Too high!</h2>
+            </div>
+            {% endif %}
+            {% if session['result'] == 'perfect' %}
+            <div class='perfect'>
+                <h2> {{session['randNum']}} was the number!</h2>
+                <form action="/destroy_session" method='post'>
+                    <button type="submit" id="reset" class="btn btn-primary">Play Again!</button>
+                </form>
+            </div>
+            {% endif %}
+            {% if session['result'] != 'perfect' %}
+            <form action="/compare" method='post'>
+                <div class="form-group">
+                    <label for="number"></label>
+                    <input type="number" class="form-control" id="InputNumber" name="playerNum" placeholder="Enter a number 1 - 100">
+                </div>
+                <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+            </form>
+            {% endif %}
+        </div>
+    </body>
+</html>
